@@ -1,0 +1,19 @@
+{% extends 'sns/layout.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block header %}
+<h1 class="display-4 text-praimary">Delete</h1>
+<p class="caption">※メッセージを削除します。</P>
+<tr><th>username</th><td>{{obj.user}}</td></tr>
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <form action="{% url 'delete' id %}" method="post">
+        {% csrf_token %}
+        <tr><th></th></td>
+        <button class="btn btn-primary">Delete</button>
+    </form>
+</table>
+{% endblock %}
